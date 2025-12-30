@@ -1,0 +1,150 @@
+table fact_orders
+	lineageTag: a99c3821-76e5-4488-81f7-c0c4b127df95
+
+	column order_id
+		dataType: string
+		lineageTag: 9195160e-5449-4a17-b8a9-655c21d951bd
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: 56426022-2b1a-4727-80a0-a9b65bdb5872
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_purchase_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: affae8f6-14f5-4700-a610-d2dd5a9a1a77
+		summarizeBy: none
+		sourceColumn: order_purchase_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_approved_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f2b452b6-f004-4ddd-827b-c1c334a051e8
+		summarizeBy: none
+		sourceColumn: order_approved_at
+
+		variation Variation
+			isDefault
+			relationship: 372a15f1-aee7-439b-8fa4-62ac31d5479e
+			defaultHierarchy: LocalDateTable_4df85eb0-b8fd-4878-8208-16b3b763de3a.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_delivered_carrier_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0813d8ea-d5f4-4d76-b286-9a7390b8dd36
+		summarizeBy: none
+		sourceColumn: order_delivered_carrier_date
+
+		variation Variation
+			isDefault
+			relationship: c101084b-8427-4fb9-970e-7abd58de642c
+			defaultHierarchy: LocalDateTable_378f59d8-6302-4a9e-802e-8f8a36242e94.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_delivered_customer_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3a13355a-f84b-4fb8-8d9a-869df0d45665
+		summarizeBy: none
+		sourceColumn: order_delivered_customer_date
+
+		variation Variation
+			isDefault
+			relationship: d7521cf9-ec8c-4518-b8ad-72bb4316fb14
+			defaultHierarchy: LocalDateTable_e86a599d-df0a-43d9-8749-bdae6980f2a7.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_estimated_delivery_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 75335c6d-6ead-41b2-8823-32f5c5852f30
+		summarizeBy: none
+		sourceColumn: order_estimated_delivery_date
+
+		variation Variation
+			isDefault
+			relationship: a83d5a39-52e6-4873-925b-2c619ccae3bd
+			defaultHierarchy: LocalDateTable_47fe975f-0d19-4008-8098-2b20bccb657f.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column boleto
+		dataType: double
+		lineageTag: fbf1ae4a-5344-48d8-a4f2-91f8047a9645
+		summarizeBy: sum
+		sourceColumn: boleto
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column credit_card
+		dataType: double
+		lineageTag: 440762c6-b2f1-4a8e-b0db-fe96cbf14261
+		summarizeBy: sum
+		sourceColumn: credit_card
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column debit_card
+		dataType: double
+		lineageTag: 08d906af-7e84-46bb-9314-a9e98d3c617d
+		summarizeBy: sum
+		sourceColumn: debit_card
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column voucher
+		dataType: double
+		lineageTag: 3ae45132-dcd8-4d33-b160-f2421d751cd1
+		summarizeBy: sum
+		sourceColumn: voucher
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_review_score
+		dataType: double
+		lineageTag: 8fb1c058-3dad-4345-8e6a-0d28ac6798a7
+		summarizeBy: sum
+		sourceColumn: avg_review_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_orders = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-7405608777171016.16.azuredatabricks.net", "sql/protocolv1/o/7405608777171016/1223-140923-cbpem1og", [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+				    dbricks_olist_bth_Database = Source{[Name="dbricks_olist_bth",Kind="Database"]}[Data],
+				    gold_Schema = dbricks_olist_bth_Database{[Name="gold",Kind="Schema"]}[Data],
+				    fact_orders_Table = gold_Schema{[Name="fact_orders",Kind="Table"]}[Data],
+				    #"Colonnes supprimées" = Table.RemoveColumns(fact_orders_Table,{"order_status"})
+				in
+				    #"Colonnes supprimées"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,84 @@
+table Dim_date
+	lineageTag: 3ec51a76-acea-45a4-82be-d47b513d8f81
+
+	column Date
+		formatString: General Date
+		lineageTag: bd12afaa-f8b3-45ee-ac65-9b4df0bdebcb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: b29c56a5-f50a-4c7d-9e6d-991950351c28
+			defaultHierarchy: LocalDateTable_95c438a8-b5d6-43b0-b88a-eee1bc5a6ccc.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Année
+		formatString: 0
+		lineageTag: fa7e49df-f9d9-4358-8333-9b8284c9f307
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Année]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mois No'
+		formatString: 0
+		lineageTag: 6d721875-8b84-4c64-94ad-feac017fcd5d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Mois No]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mois Nom'
+		lineageTag: 37ee640a-b7b9-4be9-81a6-b0ab8296b04b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Mois Nom]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Année-Mois
+		lineageTag: 334b47fe-e954-489d-be2f-c5a6e405ea76
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Année-Mois]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		lineageTag: f815c028-1482-446d-9912-ad962afa6335
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Trimestre]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Semaine
+		formatString: 0
+		lineageTag: 11f0141b-da2d-4df2-a832-9b9069f49548
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Semaine]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_date = calculated
+		mode: import
+		source =
+				
+				ADDCOLUMNS (
+				    CALENDARAUTO(),
+				    "Année", YEAR([Date]),
+				    "Mois No", MONTH([Date]),
+				    "Mois Nom", FORMAT([Date], "mmmm"),
+				    "Année-Mois", FORMAT([Date], "yyyy-MM"),
+				    "Trimestre", "T" & FORMAT([Date], "q"),
+				    "Semaine", WEEKNUM([Date], 2)
+				)
+
+	annotation PBI_Id = 97d671f5015b407394c66df1d8eb1ff3
+

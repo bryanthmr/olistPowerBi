@@ -1,0 +1,93 @@
+table dim_product
+	lineageTag: 0e1db05c-b383-4f8b-a4b3-e25575238481
+
+	column product_id
+		dataType: string
+		lineageTag: 02ca0cea-5bac-4d49-812c-fed5d7ae947b
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_name_lenght
+		dataType: int64
+		formatString: 0
+		lineageTag: ced84cd7-c1ea-4a3d-abae-2ae3f2414a1c
+		summarizeBy: none
+		sourceColumn: product_name_lenght
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_description_lenght
+		dataType: int64
+		formatString: 0
+		lineageTag: d83aec7c-0f52-40f2-9143-f9179dd623a6
+		summarizeBy: none
+		sourceColumn: product_description_lenght
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_photos_qty
+		dataType: int64
+		formatString: 0
+		lineageTag: cfefc5bf-c0df-40ac-86be-2681b67d3915
+		summarizeBy: none
+		sourceColumn: product_photos_qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_weight_g
+		dataType: int64
+		formatString: 0
+		lineageTag: d30feb77-57cd-41c6-b950-8d534aa2cdc3
+		summarizeBy: none
+		sourceColumn: product_weight_g
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_length_cm
+		dataType: int64
+		formatString: 0
+		lineageTag: c45187fb-3a52-4abe-a3ac-204f385449ca
+		summarizeBy: none
+		sourceColumn: product_length_cm
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_height_cm
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f42324e-6abb-4f0d-8960-4128e6c42973
+		summarizeBy: none
+		sourceColumn: product_height_cm
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_width_cm
+		dataType: int64
+		formatString: 0
+		lineageTag: 7e80cd5e-077f-48fa-91fe-7f71cad49971
+		summarizeBy: none
+		sourceColumn: product_width_cm
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_category_name
+		dataType: string
+		lineageTag: aab9d3cc-d0b8-4b04-ad1c-e767fa8bcf3f
+		summarizeBy: none
+		sourceColumn: product_category_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_product = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-7405608777171016.16.azuredatabricks.net", "sql/protocolv1/o/7405608777171016/1223-140923-cbpem1og", [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+				    dbricks_olist_bth_Database = Source{[Name="dbricks_olist_bth",Kind="Database"]}[Data],
+				    gold_Schema = dbricks_olist_bth_Database{[Name="gold",Kind="Schema"]}[Data],
+				    dim_product_Table = gold_Schema{[Name="dim_product",Kind="Table"]}[Data]
+				in
+				    dim_product_Table
+

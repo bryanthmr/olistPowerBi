@@ -1,0 +1,55 @@
+table dim_customer
+	lineageTag: b53c8efa-5f88-4769-8d9d-3e4eed271f89
+
+	column customer_id
+		dataType: string
+		lineageTag: 0fa10a4b-ee52-454e-bb18-c56d036c2f13
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_unique_id
+		dataType: string
+		lineageTag: 0be5df5f-8519-4723-bcaa-917dd9c02961
+		summarizeBy: none
+		sourceColumn: customer_unique_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_zip_code_prefix
+		dataType: int64
+		formatString: 0
+		lineageTag: b3766613-4bcf-4d75-b4d9-80bb5b4cfca6
+		summarizeBy: none
+		sourceColumn: customer_zip_code_prefix
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_city
+		dataType: string
+		lineageTag: 5c210257-f6b8-43ef-8d79-5749d5e44bf2
+		summarizeBy: none
+		sourceColumn: customer_city
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_state
+		dataType: string
+		lineageTag: 457bf374-e2f5-4c0a-b984-ea3b290585ac
+		summarizeBy: none
+		sourceColumn: customer_state
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_customer = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-7405608777171016.16.azuredatabricks.net", "sql/protocolv1/o/7405608777171016/1223-140923-cbpem1og", [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+				    dbricks_olist_bth_Database = Source{[Name="dbricks_olist_bth",Kind="Database"]}[Data],
+				    gold_Schema = dbricks_olist_bth_Database{[Name="gold",Kind="Schema"]}[Data],
+				    dim_customer_Table = gold_Schema{[Name="dim_customer",Kind="Table"]}[Data]
+				in
+				    dim_customer_Table
+

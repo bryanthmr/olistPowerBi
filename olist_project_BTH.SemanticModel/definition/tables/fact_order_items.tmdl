@@ -1,0 +1,101 @@
+table fact_order_items
+	lineageTag: ae70c2a5-92ae-45a3-93e3-a6b22907cc68
+
+	column order_id
+		dataType: string
+		lineageTag: 2fdf80b1-779b-4f93-9dac-59c7bba3f2ee
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_item_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 59b938ba-dd0c-4d8c-97a5-63fec9e48b66
+		summarizeBy: sum
+		sourceColumn: order_item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: string
+		lineageTag: 0d10127e-134f-45bc-aa1d-e9e119458a35
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_id
+		dataType: string
+		lineageTag: 66020557-8b90-4d32-b672-3b6daac2ea98
+		summarizeBy: none
+		sourceColumn: seller_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column shipping_limit_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 40c791fe-3596-4c9b-ab2d-88812299a82c
+		summarizeBy: none
+		sourceColumn: shipping_limit_date
+
+		variation Variation
+			isDefault
+			relationship: 89d5c809-4a30-4cd9-bc0d-f62c014d272b
+			defaultHierarchy: LocalDateTable_bc165111-6668-4320-a848-bf701fdb37ae.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column price
+		dataType: double
+		lineageTag: 08f1c3e2-5738-4912-9657-2a4cde4f2a8e
+		summarizeBy: sum
+		sourceColumn: price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column freight_value
+		dataType: double
+		lineageTag: ff56820e-da62-4341-9870-232f928f2e4e
+		summarizeBy: sum
+		sourceColumn: freight_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column customer_id
+		dataType: string
+		isHidden
+		lineageTag: 87043605-8f7b-40ec-9897-7477516fe1ec
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_purchase_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 70a42f58-900e-4944-8608-c11488f3669d
+		summarizeBy: none
+		sourceColumn: order_purchase_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_order_items = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("adb-7405608777171016.16.azuredatabricks.net", "sql/protocolv1/o/7405608777171016/1223-140923-cbpem1og", [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
+				    dbricks_olist_bth_Database = Source{[Name="dbricks_olist_bth",Kind="Database"]}[Data],
+				    gold_Schema = dbricks_olist_bth_Database{[Name="gold",Kind="Schema"]}[Data],
+				    fact_order_items_Table = gold_Schema{[Name="fact_order_items",Kind="Table"]}[Data]
+				in
+				    fact_order_items_Table
+

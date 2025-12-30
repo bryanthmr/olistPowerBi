@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "olist_project_BTH"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1c3dbccc-bfbf-4249-9438-e39db188d991"
+  }
+}

@@ -1,0 +1,30 @@
+model Model
+	culture: fr-FR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["dim_customer","dim_product","dim_seller","fact_order_items","fact_orders"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table dim_customer
+ref table dim_product
+ref table dim_seller
+ref table fact_order_items
+ref table DateTableTemplate_3558e4d9-c2e9-49fd-b04b-c2b39336ba42
+ref table LocalDateTable_bc165111-6668-4320-a848-bf701fdb37ae
+ref table fact_orders
+ref table LocalDateTable_4df85eb0-b8fd-4878-8208-16b3b763de3a
+ref table LocalDateTable_378f59d8-6302-4a9e-802e-8f8a36242e94
+ref table LocalDateTable_e86a599d-df0a-43d9-8749-bdae6980f2a7
+ref table LocalDateTable_47fe975f-0d19-4008-8098-2b20bccb657f
+ref table Dim_date
+ref table LocalDateTable_95c438a8-b5d6-43b0-b88a-eee1bc5a6ccc
+
+ref cultureInfo fr-FR
+
