@@ -19,16 +19,18 @@ table fact_orders
 
 	column order_purchase_timestamp
 		dataType: dateTime
-		formatString: General Date
+		formatString: Long Date
 		lineageTag: affae8f6-14f5-4700-a610-d2dd5a9a1a77
 		summarizeBy: none
 		sourceColumn: order_purchase_timestamp
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column order_approved_at
 		dataType: dateTime
-		formatString: General Date
+		formatString: Long Date
 		lineageTag: f2b452b6-f004-4ddd-827b-c1c334a051e8
 		summarizeBy: none
 		sourceColumn: order_approved_at
@@ -40,9 +42,11 @@ table fact_orders
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column order_delivered_carrier_date
 		dataType: dateTime
-		formatString: General Date
+		formatString: Long Date
 		lineageTag: 0813d8ea-d5f4-4d76-b286-9a7390b8dd36
 		summarizeBy: none
 		sourceColumn: order_delivered_carrier_date
@@ -54,9 +58,11 @@ table fact_orders
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column order_delivered_customer_date
 		dataType: dateTime
-		formatString: General Date
+		formatString: Long Date
 		lineageTag: 3a13355a-f84b-4fb8-8d9a-869df0d45665
 		summarizeBy: none
 		sourceColumn: order_delivered_customer_date
@@ -68,9 +74,11 @@ table fact_orders
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column order_estimated_delivery_date
 		dataType: dateTime
-		formatString: General Date
+		formatString: Long Date
 		lineageTag: 75335c6d-6ead-41b2-8823-32f5c5852f30
 		summarizeBy: none
 		sourceColumn: order_estimated_delivery_date
@@ -81,6 +89,8 @@ table fact_orders
 			defaultHierarchy: LocalDateTable_47fe975f-0d19-4008-8098-2b20bccb657f.'Hiérarchie de dates'
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column boleto
 		dataType: double
@@ -125,8 +135,18 @@ table fact_orders
 	column avg_review_score
 		dataType: double
 		lineageTag: 8fb1c058-3dad-4345-8e6a-0d28ac6798a7
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: avg_review_score
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_order
+		dataType: double
+		lineageTag: 54370b48-8ca9-4ec5-9e29-9ac6a1952adc
+		summarizeBy: sum
+		sourceColumn: total_order
 
 		annotation SummarizationSetBy = Automatic
 
@@ -140,9 +160,10 @@ table fact_orders
 				    dbricks_olist_bth_Database = Source{[Name="dbricks_olist_bth",Kind="Database"]}[Data],
 				    gold_Schema = dbricks_olist_bth_Database{[Name="gold",Kind="Schema"]}[Data],
 				    fact_orders_Table = gold_Schema{[Name="fact_orders",Kind="Table"]}[Data],
-				    #"Colonnes supprimées" = Table.RemoveColumns(fact_orders_Table,{"order_status"})
+				    #"Colonnes supprimées" = Table.RemoveColumns(fact_orders_Table,{"order_status"}),
+				    #"Type modifié" = Table.TransformColumnTypes(#"Colonnes supprimées",{{"order_purchase_timestamp", type date}, {"order_approved_at", type date}, {"order_delivered_carrier_date", type date}, {"order_delivered_customer_date", type date}, {"order_estimated_delivery_date", type date}})
 				in
-				    #"Colonnes supprimées"
+				    #"Type modifié"
 
 	annotation PBI_NavigationStepName = Navigation
 

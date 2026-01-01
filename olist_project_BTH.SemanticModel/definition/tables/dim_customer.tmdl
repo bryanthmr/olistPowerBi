@@ -53,3 +53,7 @@ table dim_customer
 				in
 				    dim_customer_Table
 
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

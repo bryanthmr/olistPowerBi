@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["dim_customer","dim_product","dim_seller","fact_order_items","fact_orders"]
+annotation PBI_QueryOrder = ["dim_customer","dim_product","dim_seller","fact_order_items","fact_orders","_Mesures"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -24,7 +24,8 @@ ref table LocalDateTable_378f59d8-6302-4a9e-802e-8f8a36242e94
 ref table LocalDateTable_e86a599d-df0a-43d9-8749-bdae6980f2a7
 ref table LocalDateTable_47fe975f-0d19-4008-8098-2b20bccb657f
 ref table Dim_date
-ref table LocalDateTable_95c438a8-b5d6-43b0-b88a-eee1bc5a6ccc
+ref table _Mesures
+ref table LocalDateTable_31a6c1f6-9bb3-4d58-b1f8-847505877701
 
 ref cultureInfo fr-FR
 

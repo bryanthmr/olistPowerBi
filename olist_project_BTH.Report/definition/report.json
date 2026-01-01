@@ -24,6 +24,19 @@
           }
         }
       }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
     ]
   },
   "resourcePackages": [
@@ -35,6 +48,47 @@
           "name": "CY24SU10",
           "path": "BaseThemes/CY24SU10.json",
           "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "olist_logo5009926023290417.png",
+          "path": "olist_logo5009926023290417.png",
+          "type": "Image"
+        },
+        {
+          "name": "financial_perf6087147846740181.png",
+          "path": "financial_perf6087147846740181.png",
+          "type": "Image"
+        },
+        {
+          "name": "map2672947956277769.png",
+          "path": "map2672947956277769.png",
+          "type": "Image"
+        },
+        {
+          "name": "Delivery1189794320100862.png",
+          "path": "Delivery1189794320100862.png",
+          "type": "Image"
+        },
+        {
+          "name": "detailed_analysis09372388845271384.png",
+          "path": "detailed_analysis09372388845271384.png",
+          "type": "Image"
+        },
+        {
+          "name": "sales_overview7037160269200873.png",
+          "path": "sales_overview7037160269200873.png",
+          "type": "Image"
+        },
+        {
+          "name": "customer8609100739455007.png",
+          "path": "customer8609100739455007.png",
+          "type": "Image"
         }
       ]
     }

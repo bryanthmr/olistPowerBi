@@ -1,48 +1,48 @@
 table Dim_date
 	lineageTag: 3ec51a76-acea-45a4-82be-d47b513d8f81
+	dataCategory: Time
 
 	column Date
-		formatString: General Date
+		isKey
+		formatString: Long Date
 		lineageTag: bd12afaa-f8b3-45ee-ac65-9b4df0bdebcb
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Date]
 
-		variation Variation
-			isDefault
-			relationship: b29c56a5-f50a-4c7d-9e6d-991950351c28
-			defaultHierarchy: LocalDateTable_95c438a8-b5d6-43b0-b88a-eee1bc5a6ccc.'Hiérarchie de dates'
-
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column Année
 		formatString: 0
-		lineageTag: fa7e49df-f9d9-4358-8333-9b8284c9f307
-		summarizeBy: sum
+		lineageTag: 24cdf418-fee5-4bd7-8da1-f180b7e95101
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Année]
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Mois No'
 		formatString: 0
-		lineageTag: 6d721875-8b84-4c64-94ad-feac017fcd5d
-		summarizeBy: sum
+		lineageTag: eee32f66-49b0-481c-bcac-7f13d7ef9505
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Mois No]
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Mois Nom'
-		lineageTag: 37ee640a-b7b9-4be9-81a6-b0ab8296b04b
+		lineageTag: 589eea85-f2bf-457f-a8e7-c579137fcce6
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Mois Nom]
+		sortByColumn: 'Mois No'
 
 		annotation SummarizationSetBy = Automatic
 
 	column Année-Mois
-		lineageTag: 334b47fe-e954-489d-be2f-c5a6e405ea76
+		lineageTag: 0491b172-bed4-484a-b73d-882d22c70930
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Année-Mois]
@@ -50,7 +50,7 @@ table Dim_date
 		annotation SummarizationSetBy = Automatic
 
 	column Trimestre
-		lineageTag: f815c028-1482-446d-9912-ad962afa6335
+		lineageTag: 7739ce89-ca4e-4b23-989e-1a23951510f0
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Trimestre]
@@ -59,12 +59,39 @@ table Dim_date
 
 	column Semaine
 		formatString: 0
-		lineageTag: 11f0141b-da2d-4df2-a832-9b9069f49548
-		summarizeBy: sum
+		lineageTag: 553b7844-98a5-44df-bd62-94f53f5d343c
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Semaine]
 
+		annotation SummarizationSetBy = User
+
+	column Est_WeekEnd = IF(WEEKDAY('Dim_date'[Date], 2) > 5, "1", "0")
+		dataType: int64
+		formatString: 0
+		lineageTag: f3b7dbef-8389-4b97-b004-2fcace822598
+		summarizeBy: none
+
 		annotation SummarizationSetBy = Automatic
+
+	hierarchy Calendar
+		lineageTag: 2811977f-87d1-4389-8fd1-259ef85f4f5e
+
+		level Année
+			lineageTag: e8b65984-a018-428c-970b-02f4c6ecde91
+			column: Année
+
+		level Trimestre
+			lineageTag: 45b5f8b0-42dc-4c2d-b437-04c28b186559
+			column: Trimestre
+
+		level 'Mois Nom'
+			lineageTag: 11feabf8-aeeb-4f11-9fc2-f9165ef23e63
+			column: 'Mois Nom'
+
+		level Date
+			lineageTag: 57ef4065-4812-471d-a668-6a016771c05f
+			column: Date
 
 	partition Dim_date = calculated
 		mode: import

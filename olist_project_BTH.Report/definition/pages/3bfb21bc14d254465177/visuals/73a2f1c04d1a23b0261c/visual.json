@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "73a2f1c04d1a23b0261c",
+  "position": {
+    "x": 16,
+    "y": 426,
+    "z": 1000,
+    "height": 294,
+    "width": 672,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "PREMIUM_ORDERS"
+                }
+              },
+              "queryRef": "_Mesures.PREMIUM_ORDERS",
+              "nativeQueryRef": "PREMIUM_ORDERS"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

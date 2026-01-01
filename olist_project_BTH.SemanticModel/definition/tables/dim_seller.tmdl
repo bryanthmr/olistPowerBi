@@ -45,3 +45,5 @@ table dim_seller
 				in
 				    dim_seller_Table
 
+	annotation PBI_ResultType = Table
+

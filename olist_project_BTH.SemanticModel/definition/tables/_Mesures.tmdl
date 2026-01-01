@@ -1,0 +1,156 @@
+table _Mesures
+	lineageTag: 6209f066-7020-4d94-b9ff-9022dc4c39a4
+
+	measure Revenue_orders = ```
+			SUM(fact_orders[total_order]) 
+			```
+		displayFolder: Finance
+		lineageTag: a8d8e0ec-f05a-476f-a55e-888c66d1801c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Revenue = SUM(fact_order_items[total_order])
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: Finance
+		lineageTag: fa78b44e-0399-4d56-8027-e8bb5a65e311
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure diff = [Revenue] - [Revenue_orders]
+		displayFolder: others
+		lineageTag: 48775d8b-91c3-4b06-9641-5ddf13f1f106
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure SUM_CARD = SUM(fact_orders[debit_card])+SUM(fact_orders[credit_card])
+		displayFolder: Finance
+		lineageTag: beb317d9-caa6-4822-8378-772d90a39abf
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure SUM_BOLETO = SUM(fact_orders[boleto])
+		displayFolder: Finance
+		lineageTag: 2346c1f2-6842-4ed6-a4a9-4f3f2f46550e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure SUM_VOUCHER = SUM(fact_orders[voucher])
+		displayFolder: Finance
+		lineageTag: 524fab18-6b4d-495e-96db-b3bce34c4e4f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AVG_PRICE = AVERAGE(fact_order_items[price])
+		displayFolder: Finance
+		lineageTag: 144a059c-93f8-4aeb-be14-73a5860f9eb6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AVG_FREIGHT = AVERAGE(fact_order_items[freight_value])
+		displayFolder: Finance
+		lineageTag: f83f571f-5ec1-4742-a8eb-174c3035a1b3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AVG_REVIEW = AVERAGE(fact_orders[avg_review_score])
+		displayFolder: Commercial
+		lineageTag: dfd5ecb9-8997-484b-a9fd-a318be8ee7fb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure NB_ORDERS = DISTINCTCOUNT(fact_orders[order_id])
+		formatString: #,0
+		displayFolder: Commercial
+		lineageTag: 7f33f62a-9bf2-4451-b8e3-52790a1a6195
+
+	measure AVG_PURCHASE = DIVIDE([Revenue],[NB_ORDERS])
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: Commercial
+		lineageTag: f598582b-294b-477e-9671-2b5a742f3d9c
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure NB_CUSTOMERS = DISTINCTCOUNT(fact_orders[customer_id])
+		formatString: #,0
+		displayFolder: Commercial
+		lineageTag: 150ac7d4-2112-4727-8bba-4d720bac62d2
+
+	measure NB_SELLERS = DISTINCTCOUNT(fact_order_items[seller_id])
+		formatString: 0
+		displayFolder: Commercial
+		lineageTag: 641f4de3-c2da-4597-8ec4-c4be3ca5d7bc
+
+	measure NB_QTY_SOLD = COUNT(fact_order_items[order_item_id])
+		formatString: #,0
+		displayFolder: Commercial
+		lineageTag: e5900be1-469b-4b9a-96ff-353bd3852597
+
+	measure RevenueN-1 = CALCULATE([Revenue],SAMEPERIODLASTYEAR(Dim_date[Date]))
+		displayFolder: Finance
+		lineageTag: 85ab2857-27d4-481c-b1f3-91dbf5eac9ef
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Revenue_global = CALCULATE([Revenue],ALL(fact_order_items),ALL(fact_orders))
+		displayFolder: Finance
+		lineageTag: 10c38b22-a80b-4115-9227-565a99dca56a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Contribution Revenue' = DIVIDE([Revenue],[Revenue_global])
+		displayFolder: Finance
+		lineageTag: f147a423-5445-48af-8c1d-70b9751245e6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure RevenueYTD = TOTALYTD([Revenue],Dim_date[Date])
+		displayFolder: Finance
+		lineageTag: 28749bd5-e172-4fe6-aeee-12222ac9094e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PREMIUM_ORDERS = CALCULATE(COUNT(fact_orders[order_id]),fact_orders[total_order]>500)
+		formatString: #,0
+		displayFolder: Commercial
+		lineageTag: 7000d230-81cf-4a83-850e-ed0e2867209d
+
+	measure RevenueWKND = CALCULATE([Revenue],Dim_date[Est_WeekEnd]=1)
+		displayFolder: Finance
+		lineageTag: 3a099850-f98d-4bcd-8a93-bbca05b1f67e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CUMUL_Revenue =
+			CALCULATE(
+			    [Revenue],
+			    FILTER(
+			        ALL('Dim_date'),
+			        'Dim_date'[Date] <= MAX('Dim_date'[Date])
+			    )
+			)
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: Finance
+		lineageTag: 12cbe534-596b-49f4-858c-5b4579accb07
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column _Mesures
+		dataType: string
+		lineageTag: 6d7f0bc8-5b16-40ce-ad33-fdc66a390223
+		summarizeBy: none
+		sourceColumn: _Mesures
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Mesures = m
+		mode: import
+		source =
+				let
+				    Source = ""
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

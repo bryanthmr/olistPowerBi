@@ -13,10 +13,10 @@ table fact_order_items
 		dataType: int64
 		formatString: 0
 		lineageTag: 59b938ba-dd0c-4d8c-97a5-63fec9e48b66
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: order_item_id
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column product_id
 		dataType: string
@@ -36,7 +36,7 @@ table fact_order_items
 
 	column shipping_limit_date
 		dataType: dateTime
-		formatString: General Date
+		formatString: Long Date
 		lineageTag: 40c791fe-3596-4c9b-ab2d-88812299a82c
 		summarizeBy: none
 		sourceColumn: shipping_limit_date
@@ -47,6 +47,8 @@ table fact_order_items
 			defaultHierarchy: LocalDateTable_bc165111-6668-4320-a848-bf701fdb37ae.'Hiérarchie de dates'
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column price
 		dataType: double
@@ -81,12 +83,29 @@ table fact_order_items
 
 	column order_purchase_timestamp
 		dataType: dateTime
-		formatString: General Date
+		formatString: Long Date
 		lineageTag: 70a42f58-900e-4944-8608-c11488f3669d
 		summarizeBy: none
 		sourceColumn: order_purchase_timestamp
 
+		variation Variation
+			isDefault
+			relationship: d677c5b9-0f81-4e25-8e0d-832eb57e263b
+			defaultHierarchy: LocalDateTable_31a6c1f6-9bb3-4d58-b1f8-847505877701.'Hiérarchie de dates'
+
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column total_order
+		dataType: double
+		lineageTag: 19056378-3be9-4162-9bb4-1c9a55dba59d
+		summarizeBy: sum
+		sourceColumn: total_order
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition fact_order_items = m
 		mode: import
@@ -95,7 +114,12 @@ table fact_order_items
 				    Source = Databricks.Catalogs("adb-7405608777171016.16.azuredatabricks.net", "sql/protocolv1/o/7405608777171016/1223-140923-cbpem1og", [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null, Implementation=null]),
 				    dbricks_olist_bth_Database = Source{[Name="dbricks_olist_bth",Kind="Database"]}[Data],
 				    gold_Schema = dbricks_olist_bth_Database{[Name="gold",Kind="Schema"]}[Data],
-				    fact_order_items_Table = gold_Schema{[Name="fact_order_items",Kind="Table"]}[Data]
+				    fact_order_items_Table = gold_Schema{[Name="fact_order_items",Kind="Table"]}[Data],
+				    #"Type modifié" = Table.TransformColumnTypes(fact_order_items_Table,{{"order_purchase_timestamp", type date}, {"shipping_limit_date", type date}})
 				in
-				    fact_order_items_Table
+				    #"Type modifié"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 

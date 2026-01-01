@@ -23,20 +23,6 @@ relationship a83d5a39-52e6-4873-925b-2c619ccae3bd
 	fromColumn: fact_orders.order_estimated_delivery_date
 	toColumn: LocalDateTable_47fe975f-0d19-4008-8098-2b20bccb657f.Date
 
-relationship b29c56a5-f50a-4c7d-9e6d-991950351c28
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Dim_date.Date
-	toColumn: LocalDateTable_95c438a8-b5d6-43b0-b88a-eee1bc5a6ccc.Date
-
-relationship b58ecced-41ad-27ea-9b2c-056025f19904
-	fromColumn: fact_orders.order_purchase_timestamp
-	toColumn: Dim_date.Date
-
-relationship 8cf938ca-06b6-19fe-077f-51843ebeb902
-	isActive: false
-	fromColumn: fact_order_items.order_purchase_timestamp
-	toColumn: Dim_date.Date
-
 relationship b97ffc01-343f-4377-0804-c2cd2c16c712
 	fromColumn: fact_orders.customer_id
 	toColumn: dim_customer.customer_id
@@ -52,4 +38,13 @@ relationship c459fab9-a629-33c1-1ad5-c0f2a5e0c9e0
 relationship dd96d70a-6eda-85a9-3158-8373a690d9c4
 	fromColumn: fact_order_items.product_id
 	toColumn: dim_product.product_id
+
+relationship d677c5b9-0f81-4e25-8e0d-832eb57e263b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fact_order_items.order_purchase_timestamp
+	toColumn: LocalDateTable_31a6c1f6-9bb3-4d58-b1f8-847505877701.Date
+
+relationship b42271bb-a138-b8a2-2509-ffe87a870408
+	fromColumn: fact_orders.order_purchase_timestamp
+	toColumn: Dim_date.Date
 
