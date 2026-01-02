@@ -23,22 +23,25 @@ table _Mesures
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure SUM_CARD = SUM(fact_orders[debit_card])+SUM(fact_orders[credit_card])
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		displayFolder: Finance
 		lineageTag: beb317d9-caa6-4822-8378-772d90a39abf
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure SUM_BOLETO = SUM(fact_orders[boleto])
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		displayFolder: Finance
 		lineageTag: 2346c1f2-6842-4ed6-a4a9-4f3f2f46550e
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure SUM_VOUCHER = SUM(fact_orders[voucher])
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		displayFolder: Finance
 		lineageTag: 524fab18-6b4d-495e-96db-b3bce34c4e4f
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure AVG_PRICE = AVERAGE(fact_order_items[price])
 		displayFolder: Finance
@@ -70,13 +73,13 @@ table _Mesures
 
 		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
-	measure NB_CUSTOMERS = DISTINCTCOUNT(fact_orders[customer_id])
+	measure NB_CUSTOMERS = DISTINCTCOUNT(dim_customer[customer_unique_id])
 		formatString: #,0
 		displayFolder: Commercial
 		lineageTag: 150ac7d4-2112-4727-8bba-4d720bac62d2
 
 	measure NB_SELLERS = DISTINCTCOUNT(fact_order_items[seller_id])
-		formatString: 0
+		formatString: #,0
 		displayFolder: Commercial
 		lineageTag: 641f4de3-c2da-4597-8ec4-c4be3ca5d7bc
 
@@ -86,10 +89,11 @@ table _Mesures
 		lineageTag: e5900be1-469b-4b9a-96ff-353bd3852597
 
 	measure RevenueN-1 = CALCULATE([Revenue],SAMEPERIODLASTYEAR(Dim_date[Date]))
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		displayFolder: Finance
 		lineageTag: 85ab2857-27d4-481c-b1f3-91dbf5eac9ef
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure Revenue_global = CALCULATE([Revenue],ALL(fact_order_items),ALL(fact_orders))
 		displayFolder: Finance
@@ -98,10 +102,9 @@ table _Mesures
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure '% Contribution Revenue' = DIVIDE([Revenue],[Revenue_global])
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
 		displayFolder: Finance
 		lineageTag: f147a423-5445-48af-8c1d-70b9751245e6
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure RevenueYTD = TOTALYTD([Revenue],Dim_date[Date])
 		displayFolder: Finance
@@ -115,10 +118,11 @@ table _Mesures
 		lineageTag: 7000d230-81cf-4a83-850e-ed0e2867209d
 
 	measure RevenueWKND = CALCULATE([Revenue],Dim_date[Est_WeekEnd]=1)
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		displayFolder: Finance
 		lineageTag: 3a099850-f98d-4bcd-8a93-bbca05b1f67e
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure CUMUL_Revenue =
 			CALCULATE(
@@ -133,6 +137,25 @@ table _Mesures
 		lineageTag: 12cbe534-596b-49f4-858c-5b4579accb07
 
 		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure SUM_FEIGHT = SUM(fact_order_items[freight_value])
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: Finance
+		lineageTag: 24368191-8a7f-422c-a5b9-bda3ab69000d
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure SUM_PRICE = SUM(fact_order_items[price])
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: Finance
+		lineageTag: c5ac4f59-a3db-440a-9825-0d8008c1a80f
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure '% growth' = DIVIDE([Revenue] , [RevenueN-1])
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Finance
+		lineageTag: a4289349-c6b2-4243-81ad-63b1556781ef
 
 	column _Mesures
 		dataType: string

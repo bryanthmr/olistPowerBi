@@ -42,6 +42,43 @@ table dim_customer
 
 		annotation SummarizationSetBy = Automatic
 
+	column full_customer_state =
+			SWITCH(
+			    [customer_state],
+			    "SP", "Sao Paulo",
+			    "RJ", "Rio de Janeiro",
+			    "MG", "Minas Gerais",
+			    "RS", "Rio Grande do Sul",
+			    "PR", "Parana",
+			    "SC", "Santa Catarina",
+			    "BA", "Bahia",
+			    "DF", "Distrito Federal",
+			    "GO", "Goias",
+			    "ES", "Espirito Santo",
+			    "PE", "Pernambuco",
+			    "CE", "Ceara",
+			    "PA", "Para",
+			    "MT", "Mato Grosso",
+			    "MA", "Maranhao",
+			    "MS", "Mato Grosso do Sul",
+			    "PB", "Paraiba",
+			    "RN", "Rio Grande do Norte",
+			    "AM", "Amazonas",
+			    "AL", "Alagoas",
+			    "TO", "Tocantins",
+			    "SE", "Sergipe",
+			    "RO", "Rondonia",
+			    "PI", "Piaui",
+			    "AC", "Acre",
+			    "AP", "Amapa",
+			    "RR", "Roraima",
+			    [customer_state]
+			)
+		lineageTag: 85fcdf41-8569-4774-88c6-587c0b32b54a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition dim_customer = m
 		mode: import
 		source =

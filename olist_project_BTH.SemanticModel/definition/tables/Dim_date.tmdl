@@ -103,7 +103,7 @@ table Dim_date
 				    "Mois No", MONTH([Date]),
 				    "Mois Nom", FORMAT([Date], "mmmm"),
 				    "Année-Mois", FORMAT([Date], "yyyy-MM"),
-				    "Trimestre", "T" & FORMAT([Date], "q"),
+				    "Trimestre", "Q" & FORMAT([Date], "q"),
 				    "Semaine", WEEKNUM([Date], 2)
 				)
 

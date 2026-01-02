@@ -144,7 +144,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 10 Products Categories per Revenue'"
+                  "Value": "'Best Sellers Categories'"
                 }
               }
             }
