@@ -168,8 +168,6 @@ table fact_orders
 		summarizeBy: sum
 		sourceColumn: isLate
 
-		changedProperty = DataType
-
 		annotation SummarizationSetBy = Automatic
 
 	column isLateBool = IF(fact_orders[isLate]=0,"In Time","Late")

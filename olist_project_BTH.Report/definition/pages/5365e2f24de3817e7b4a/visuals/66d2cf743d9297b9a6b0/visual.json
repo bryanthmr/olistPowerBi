@@ -1,0 +1,573 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "66d2cf743d9297b9a6b0",
+  "position": {
+    "x": 16,
+    "y": 224,
+    "z": 2001,
+    "height": 479.99999999999994,
+    "width": 1248,
+    "tabOrder": 1001
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_product"
+                    }
+                  },
+                  "Property": "product_category_name"
+                }
+              },
+              "queryRef": "dim_product.product_category_name",
+              "nativeQueryRef": "Product Category",
+              "active": true,
+              "displayName": "Product Category"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "% Contribution Revenue"
+                }
+              },
+              "queryRef": "_Mesures.% Contribution Revenue",
+              "nativeQueryRef": "Revenue Contribution",
+              "displayName": "Revenue Contribution"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Revenue"
+                }
+              },
+              "queryRef": "_Mesures.Revenue",
+              "nativeQueryRef": "Revenue"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "NB_ORDERS"
+                }
+              },
+              "queryRef": "_Mesures.NB_ORDERS",
+              "nativeQueryRef": "Number Of Orders",
+              "displayName": "Number Of Orders"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "AVG_PURCHASE"
+                }
+              },
+              "queryRef": "_Mesures.AVG_PURCHASE",
+              "nativeQueryRef": "Average Order Value",
+              "displayName": "Average Order Value"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "NB_QTY_SOLD"
+                }
+              },
+              "queryRef": "_Mesures.NB_QTY_SOLD",
+              "nativeQueryRef": "Quantity Sold",
+              "displayName": "Quantity Sold"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "PREMIUM_ORDERS"
+                }
+              },
+              "queryRef": "_Mesures.PREMIUM_ORDERS",
+              "nativeQueryRef": "Number Of Premium Orders (>500 R$)",
+              "displayName": "Number Of Premium Orders (>500 R$)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "% Delay Respected"
+                }
+              },
+              "queryRef": "_Mesures.% Delay Respected",
+              "nativeQueryRef": "Delay Respect in %",
+              "displayName": "Delay Respect in %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "AVG_DELAY"
+                }
+              },
+              "queryRef": "_Mesures.AVG_DELAY",
+              "nativeQueryRef": "Average Delay In Days",
+              "displayName": "Average Delay In Days"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "% Customer Satisfaction"
+                }
+              },
+              "queryRef": "_Mesures.% Customer Satisfaction",
+              "nativeQueryRef": "Customer Satisfaction",
+              "displayName": "Customer Satisfaction"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Mesures"
+                  }
+                },
+                "Property": "% Contribution Revenue"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "92.58136083741344D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Mesures.% Contribution Revenue"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "338.29951867650726D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dim_product.product_category_name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "106.26263651946846D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Mesures.PREMIUM_ORDERS"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "75.60361817181366D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Mesures.NB_ORDERS"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "68.7468786250368D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Mesures.NB_QTY_SOLD"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "91.05424537329529D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Mesures.AVG_PURCHASE"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "90.84562168988782D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Mesures.% Delay Respected"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "92.71348010485876D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Mesures.% Customer Satisfaction"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "99.38387973782311D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Mesures.AVG_DELAY"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "_Mesures"
+                            }
+                          },
+                          "Property": "% Contribution Revenue"
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient2": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'minColor'"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#118DFF'"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'asZero'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "_Mesures.% Contribution Revenue"
+          }
+        }
+      ],
+      "blankRows": [
+        {
+          "properties": {
+            "showBlankRows": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "_Mesures.% Contribution Revenue"
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#074cdf'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "34929c6bd21a0d0e5b29",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_product"
+              }
+            },
+            "Property": "product_category_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d59f63401b6d09bd3472",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mesures"
+              }
+            },
+            "Property": "% Customer Satisfaction"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "909ed7c10051354588c0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mesures"
+              }
+            },
+            "Property": "NB_QTY_SOLD"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f2235b17108e402402de",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mesures"
+              }
+            },
+            "Property": "NB_ORDERS"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0aef741ce90a456d2db0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mesures"
+              }
+            },
+            "Property": "% Contribution Revenue"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dd6ee0f20e815714401c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mesures"
+              }
+            },
+            "Property": "% Delay Respected"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "222dda8de243430109b7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mesures"
+              }
+            },
+            "Property": "PREMIUM_ORDERS"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

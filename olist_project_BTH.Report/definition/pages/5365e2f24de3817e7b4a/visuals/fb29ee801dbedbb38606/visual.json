@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "d18d2902ca45d3e09155",
+  "name": "fb29ee801dbedbb38606",
   "position": {
     "x": 336,
     "y": 16,
     "z": 2000,
-    "height": 80,
-    "width": 592,
+    "height": 79.999999999999986,
+    "width": 608,
     "tabOrder": 1000
   },
   "visual": {
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Sales Overview",
+                    "value": "Detailed Analysis",
                     "textStyle": {
                       "fontFamily": "Segoe (Bold)",
                       "fontSize": "18pt",
@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Executive Summary: Sales Performance & Volume ",
+                    "value": " Granular Analysis: Sales, Logistics & Satisfaction by Product Category",
                     "textStyle": {
                       "fontSize": "14pt"
                     }
