@@ -159,19 +159,51 @@ table _Mesures
 
 	measure NB_LATE = SUM(fact_orders[isLate])
 		formatString: #,0
+		displayFolder: Commercial
 		lineageTag: 93c24c6c-6882-42fc-bbec-795f496c2e57
 
 	measure NB_NOT_LATE = [NB_ORDERS]-[NB_LATE]
 		formatString: #,0
+		displayFolder: Commercial
 		lineageTag: 99517636-bf77-4398-9774-3aed20186f99
 
 	measure AVG_DELAY = AVERAGE(fact_orders[orders_delay])
 		formatString: 0.00
+		displayFolder: Commercial
 		lineageTag: 48f050d8-417d-446b-8dd9-46769d37e60c
 
 	measure '% Delay Respected' = DIVIDE([NB_NOT_LATE],[NB_ORDERS])
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Commercial
 		lineageTag: 369022ac-8f32-4802-b73d-766be24abdf9
+
+	measure '% Customer Satisfaction' = DIVIDE([AVG_REVIEW],5)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Commercial
+		lineageTag: 889d53db-f594-4c24-a75c-55e7f5ba5bd4
+
+	measure 'NB Review' = COUNT(fact_orders[avg_review_score])
+		formatString: 0
+		displayFolder: Commercial
+		lineageTag: f1626460-b54a-417c-a603-a43dafcabf75
+
+	measure '% Review Comments Rate' = DIVIDE([NB Review Comments],[NB_ORDERS])
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Commercial
+		lineageTag: 2c69b893-d976-4104-b08a-c6ab8c29ab0b
+
+	measure '% NPS' = DIVIDE(CALCULATE([NB Review],fact_orders[avg_review_score]=5)-CALCULATE([NB Review],fact_orders[avg_review_score]<=3),[NB Review])
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Commercial
+		lineageTag: b1071c63-7be8-4b21-a15f-4abbe125e43c
+
+	measure 'Target NPS' = 0.3
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 89e9c5b4-5eb8-45af-bb18-f865fc676be7
+
+	measure 'NB Review Comments' = SUM(fact_orders[total_reviews_with_comments])
+		formatString: 0
+		lineageTag: 23df200b-e388-4514-b472-456132b349aa
 
 	column _Mesures
 		dataType: string

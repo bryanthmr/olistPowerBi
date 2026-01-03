@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "e1fd3195f92d8e26144b",
+  "name": "b31b73ec49c8a0c97271",
   "position": {
-    "x": 736,
-    "y": 128,
-    "z": 4000,
-    "height": 480,
-    "width": 528,
-    "tabOrder": 3000
+    "x": 880,
+    "y": 256,
+    "z": 3000,
+    "height": 448,
+    "width": 384,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "shapeMap",
@@ -20,15 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dim_seller"
+                      "Entity": "dim_customer"
                     }
                   },
-                  "Property": "full_seller_state"
+                  "Property": "full_customer_state"
                 }
               },
-              "queryRef": "dim_seller.full_seller_state",
-              "nativeQueryRef": "Seller State",
-              "displayName": "Seller State"
+              "queryRef": "dim_customer.full_customer_state",
+              "nativeQueryRef": "Customer State",
+              "displayName": "Customer State"
             }
           ]
         },
@@ -42,12 +42,12 @@
                       "Entity": "_Mesures"
                     }
                   },
-                  "Property": "% Contribution Revenue"
+                  "Property": "% NPS"
                 }
               },
-              "queryRef": "_Mesures.% Contribution Revenue",
-              "nativeQueryRef": "Revenue Contribution (%)",
-              "displayName": "Revenue Contribution (%)"
+              "queryRef": "_Mesures.% NPS",
+              "nativeQueryRef": "NPS",
+              "displayName": "NPS"
             },
             {
               "field": {
@@ -57,57 +57,12 @@
                       "Entity": "_Mesures"
                     }
                   },
-                  "Property": "NB_SELLERS"
+                  "Property": "% Review Comments Rate"
                 }
               },
-              "queryRef": "_Mesures.NB_SELLERS",
-              "nativeQueryRef": "Number Of Sellers",
-              "displayName": "Number Of Sellers"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Mesures"
-                    }
-                  },
-                  "Property": "NB_ORDERS"
-                }
-              },
-              "queryRef": "_Mesures.NB_ORDERS",
-              "nativeQueryRef": "Number Of Orders",
-              "displayName": "Number Of Orders"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Mesures"
-                    }
-                  },
-                  "Property": "NB_QTY_SOLD"
-                }
-              },
-              "queryRef": "_Mesures.NB_QTY_SOLD",
-              "nativeQueryRef": "Quantity Sold",
-              "displayName": "Quantity Sold"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Mesures"
-                    }
-                  },
-                  "Property": "PREMIUM_ORDERS"
-                }
-              },
-              "queryRef": "_Mesures.PREMIUM_ORDERS",
-              "nativeQueryRef": "Number Of Premium Orders (>500R$)",
-              "displayName": "Number Of Premium Orders (>500R$)"
+              "queryRef": "_Mesures.% Review Comments Rate",
+              "nativeQueryRef": "Review Comments Rate",
+              "displayName": "Review Comments Rate"
             }
           ]
         },
@@ -121,11 +76,12 @@
                       "Entity": "_Mesures"
                     }
                   },
-                  "Property": "Revenue"
+                  "Property": "% Customer Satisfaction"
                 }
               },
-              "queryRef": "_Mesures.Revenue",
-              "nativeQueryRef": "Revenue"
+              "queryRef": "_Mesures.% Customer Satisfaction",
+              "nativeQueryRef": "Customer Satisfaction",
+              "displayName": "Customer Satisfaction"
             }
           ]
         }
@@ -184,6 +140,13 @@
                         "Value": "'minColor'"
                       }
                     }
+                  },
+                  "value": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "0.8D"
+                      }
+                    }
                   }
                 },
                 "mid": {
@@ -200,6 +163,13 @@
                     "expr": {
                       "Literal": {
                         "Value": "'#12239E'"
+                      }
+                    }
+                  },
+                  "value": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "0.9D"
                       }
                     }
                   }
@@ -224,7 +194,7 @@
             "borderThickness": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "0D"
                 }
               }
             },
@@ -233,8 +203,8 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
+                      "ColorId": 1,
+                      "Percent": 0.4
                     }
                   }
                 }
@@ -251,6 +221,13 @@
                   }
                 }
               }
+            },
+            "defaultShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
@@ -258,24 +235,10 @@
       "zoom": [
         {
           "properties": {
-            "autoZoom": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
             "selectionZoom": {
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "manualZoom": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }
@@ -328,7 +291,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Revenue By Seller State'"
+                  "Value": "'Customer Satisfaction (%) By Customer State'"
                 }
               }
             }
@@ -341,7 +304,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "14D"
+                  "Value": "10D"
                 }
               }
             }
@@ -350,5 +313,65 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "106289c6b8eb4d6a334c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_customer"
+              }
+            },
+            "Property": "full_customer_state"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "13319560881800910c00",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mesures"
+              }
+            },
+            "Property": "% Customer Satisfaction"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e66500a1004ea497ec9e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mesures"
+              }
+            },
+            "Property": "% NPS"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "26095d0037c2ba10e387",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mesures"
+              }
+            },
+            "Property": "% Review Comments Rate"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

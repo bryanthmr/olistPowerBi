@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "a2b30ebc47edc0eb8d4a",
+  "name": "dad1bf2fce5b251d6d12",
   "position": {
     "x": 16,
-    "y": 128,
-    "z": 6000,
-    "height": 480,
+    "y": 256,
+    "z": 6003,
+    "height": 448,
     "width": 192,
-    "tabOrder": 5000
+    "tabOrder": 5003
   },
   "visual": {
     "visualType": "slicer",
@@ -83,6 +83,13 @@
                   "Value": "1D"
                 }
               }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
             }
           }
         }
@@ -94,6 +101,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Product Categories Filter'"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
                 }
               }
             }

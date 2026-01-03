@@ -159,8 +159,6 @@ table fact_orders
 		summarizeBy: sum
 		sourceColumn: orders_delay
 
-		changedProperty = DataType
-
 		annotation SummarizationSetBy = Automatic
 
 	column isLate
@@ -177,6 +175,15 @@ table fact_orders
 	column isLateBool = IF(fact_orders[isLate]=0,"In Time","Late")
 		lineageTag: cbc7bb63-aa3c-440c-b6a4-6532d3ef4192
 		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_reviews_with_comments
+		dataType: int64
+		formatString: 0
+		lineageTag: 10d8695b-2430-453a-9df0-003fb0fcbd7f
+		summarizeBy: sum
+		sourceColumn: total_reviews_with_comments
 
 		annotation SummarizationSetBy = Automatic
 
