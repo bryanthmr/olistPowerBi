@@ -3587,16 +3587,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "freight cost": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
 			          "freight charge": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -3638,6 +3628,16 @@ cultureInfo fr-FR
 			        },
 			        {
 			          "charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "rate": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -9276,6 +9276,16 @@ cultureInfo fr-FR
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Premium Orders (>500R$)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -9484,6 +9494,16 @@ cultureInfo fr-FR
 			        },
 			        {
 			          "Freight Value": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Freight Cost": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -9911,42 +9931,632 @@ cultureInfo fr-FR
 			        }
 			      ],
 			      "SemanticType": "Location"
-			    }
-			  },
-			  "Relationships": {
-			    "fact_order_order_estimated_delivery_date_hiérarchie_de_date_has_fact_order_order_estimated_delivery_date_jour": {
-			      "Binding": {
-			        "ConceptualEntity": "fact_orders"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_order.order_estimated_delivery_date.hiérarchie_de_date": {
-			          "Target": {
-			            "Entity": "fact_order.order_estimated_delivery_date.hiérarchie_de_date"
-			          }
-			        },
-			        "fact_order.order_estimated_delivery_date.jour": {
-			          "Target": {
-			            "Entity": "fact_order.order_estimated_delivery_date.jour"
-			          }
+			    },
+			    "fact_order.orders_delay": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_orders",
+			          "ConceptualProperty": "orders_delay"
 			        }
 			      },
-			      "Phrasings": [
+			      "State": "Generated",
+			      "Terms": [
 			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_order.order_estimated_delivery_date.hiérarchie_de_date"
+			          "orders delay": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "order delay": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "orders_delay": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "delay": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "order postponement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
 			            },
-			            "Object": {
-			              "Role": "fact_order.order_estimated_delivery_date.jour"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_jour"
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "order interruption": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "order suspension": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "order adjournment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "order deferral": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "order deferment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "postponement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "interruption": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "suspension": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "adjournment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
 			        }
 			      ]
 			    },
+			    "fact_order.is_late": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_orders",
+			          "ConceptualProperty": "isLate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is late": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "isLate": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.growth": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "% growth"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% growth": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage growth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "pct growth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "% development": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "% evolution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "% progression": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "% growing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "% progress": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "% advance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "% tumor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "% cyst": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.nb_late": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "NB_LATE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nb late": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "NB_LATE": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Number Of Late Delivery": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.nb_not_late": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "NB_NOT_LATE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nb not late": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "NB_NOT_LATE": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.avg_delay": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "AVG_DELAY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "avg delay": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "AVG_DELAY": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "average delay": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "avg postponement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "avg interruption": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "avg suspension": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "avg adjournment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "avg deferral": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "avg deferment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "avg stay": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "avg interval": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "avg holdup": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "Average Delay of Delivery (Days)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Average Delivery Delay (Days)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.delay_respected": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "% Delay Respected"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% delay respected": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage delay respected": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "pct delay respected": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "% postponement respected": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "% interruption respected": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "% suspension respected": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "% adjournment respected": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "% deferral respected": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "% deferment respected": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "% stay respected": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "% interval respected": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        }
+			      ]
+			    },
+			    "fact_order.is_late_bool": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_orders",
+			          "ConceptualProperty": "isLateBool"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is late bool": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "isLateBool": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Delivery Late Status": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
 			    "fact_order_order_estimated_delivery_date_hiérarchie_de_date_has_fact_order_order_estimated_delivery_date_mois": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_orders"
@@ -10306,7 +10916,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_jour1"
+			          "ID": "hiérarchie_de_dates_have_jour"
 			        }
 			      ]
 			    },
@@ -10669,7 +11279,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_jour2"
+			          "ID": "hiérarchie_de_dates_have_jour1"
 			        }
 			      ]
 			    },
@@ -11032,7 +11642,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_jour3"
+			          "ID": "hiérarchie_de_dates_have_jour2"
 			        }
 			      ]
 			    },
@@ -11395,7 +12005,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_jour4"
+			          "ID": "hiérarchie_de_dates_have_jour3"
 			        }
 			      ]
 			    },
@@ -11758,7 +12368,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_jour5"
+			          "ID": "hiérarchie_de_dates_have_jour4"
 			        }
 			      ]
 			    },
@@ -12158,6 +12768,290 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fact_orders_have_fact_order_items"
+			        }
+			      ]
+			    },
+			    "fact_order_has_is_late_bool": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_orders"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_order": {
+			          "Target": {
+			            "Entity": "fact_order"
+			          }
+			        },
+			        "fact_order.is_late_bool": {
+			          "Target": {
+			            "Entity": "fact_order.is_late_bool"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_order"
+			            },
+			            "Object": {
+			              "Role": "fact_order.is_late_bool"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_orders_have_is_late_bools"
+			        }
+			      ]
+			    },
+			    "fact_order_has_entity__mesure_delay_respected": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_orders"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_order": {
+			          "Target": {
+			            "Entity": "fact_order"
+			          }
+			        },
+			        "entity__mesure.delay_respected": {
+			          "Target": {
+			            "Entity": "entity__mesure.delay_respected"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_order"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.delay_respected"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_orders_have__delay_respected"
+			        }
+			      ]
+			    },
+			    "fact_order_has_entity__mesure_avg_delay": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_orders"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_order": {
+			          "Target": {
+			            "Entity": "fact_order"
+			          }
+			        },
+			        "entity__mesure.avg_delay": {
+			          "Target": {
+			            "Entity": "entity__mesure.avg_delay"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_order"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.avg_delay"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_orders_have_avg_delay"
+			        }
+			      ]
+			    },
+			    "fact_order_has_entity__mesure_nb_not_late": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_orders"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_order": {
+			          "Target": {
+			            "Entity": "fact_order"
+			          }
+			        },
+			        "entity__mesure.nb_not_late": {
+			          "Target": {
+			            "Entity": "entity__mesure.nb_not_late"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_order"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.nb_not_late"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_orders_have_nb_not_late"
+			        }
+			      ]
+			    },
+			    "fact_order_has_entity__mesure_nb_late": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_orders"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_order": {
+			          "Target": {
+			            "Entity": "fact_order"
+			          }
+			        },
+			        "entity__mesure.nb_late": {
+			          "Target": {
+			            "Entity": "entity__mesure.nb_late"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_order"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.nb_late"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_orders_have_nb_late"
+			        }
+			      ]
+			    },
+			    "fact_order_item_has_entity__mesure_growth": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_order_items"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_order_item": {
+			          "Target": {
+			            "Entity": "fact_order_item"
+			          }
+			        },
+			        "entity__mesure.growth": {
+			          "Target": {
+			            "Entity": "entity__mesure.growth"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_order_item"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.growth"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_order_items_have__growth"
+			        }
+			      ]
+			    },
+			    "fact_order_has_is_late": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_orders"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_order": {
+			          "Target": {
+			            "Entity": "fact_order"
+			          }
+			        },
+			        "fact_order.is_late": {
+			          "Target": {
+			            "Entity": "fact_order.is_late"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_order"
+			            },
+			            "Object": {
+			              "Role": "fact_order.is_late"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_orders_have_is_late"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "fact_order"
+			            },
+			            "Adjectives": [
+			              {
+			                "late": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "fact_order.is_late"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "is_late_indicates_how_late_fact_orders_are"
+			        }
+			      ]
+			    },
+			    "fact_order_has_orders_delay": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_orders"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_order": {
+			          "Target": {
+			            "Entity": "fact_order"
+			          }
+			        },
+			        "fact_order.orders_delay": {
+			          "Target": {
+			            "Entity": "fact_order.orders_delay"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_order"
+			            },
+			            "Object": {
+			              "Role": "fact_order.orders_delay"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_orders_have_orders_delays"
 			        }
 			      ]
 			    },
@@ -15217,6 +16111,39 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.9,
 			          "ID": "fact_order_items_are_limited_on_shipping_limit_dates"
+			        }
+			      ]
+			    },
+			    "fact_order_order_estimated_delivery_date_hiérarchie_de_date_has_fact_order_order_estimated_delivery_date_jour": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_orders"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_order.order_estimated_delivery_date.hiérarchie_de_date": {
+			          "Target": {
+			            "Entity": "fact_order.order_estimated_delivery_date.hiérarchie_de_date"
+			          }
+			        },
+			        "fact_order.order_estimated_delivery_date.jour": {
+			          "Target": {
+			            "Entity": "fact_order.order_estimated_delivery_date.jour"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_order.order_estimated_delivery_date.hiérarchie_de_date"
+			            },
+			            "Object": {
+			              "Role": "fact_order.order_estimated_delivery_date.jour"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hiérarchie_de_dates_have_jour5"
 			        }
 			      ]
 			    },

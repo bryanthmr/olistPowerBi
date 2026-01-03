@@ -157,6 +157,22 @@ table _Mesures
 		displayFolder: Finance
 		lineageTag: a4289349-c6b2-4243-81ad-63b1556781ef
 
+	measure NB_LATE = SUM(fact_orders[isLate])
+		formatString: #,0
+		lineageTag: 93c24c6c-6882-42fc-bbec-795f496c2e57
+
+	measure NB_NOT_LATE = [NB_ORDERS]-[NB_LATE]
+		formatString: #,0
+		lineageTag: 99517636-bf77-4398-9774-3aed20186f99
+
+	measure AVG_DELAY = AVERAGE(fact_orders[orders_delay])
+		formatString: 0.00
+		lineageTag: 48f050d8-417d-446b-8dd9-46769d37e60c
+
+	measure '% Delay Respected' = DIVIDE([NB_NOT_LATE],[NB_ORDERS])
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 369022ac-8f32-4802-b73d-766be24abdf9
+
 	column _Mesures
 		dataType: string
 		lineageTag: 6d7f0bc8-5b16-40ce-ad33-fdc66a390223

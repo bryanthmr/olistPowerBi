@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "e1fd3195f92d8e26144b",
+  "name": "d6c8b74cd4dd9037dc79",
   "position": {
-    "x": 736,
-    "y": 128,
-    "z": 4000,
-    "height": 480,
-    "width": 528,
-    "tabOrder": 3000
+    "x": 648,
+    "y": 264,
+    "z": 7000,
+    "height": 440,
+    "width": 616,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "shapeMap",
@@ -20,80 +20,20 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dim_seller"
+                      "Entity": "dim_customer"
                     }
                   },
-                  "Property": "full_seller_state"
+                  "Property": "full_customer_state"
                 }
               },
-              "queryRef": "dim_seller.full_seller_state",
-              "nativeQueryRef": "Seller State",
-              "displayName": "Seller State"
+              "queryRef": "dim_customer.full_customer_state",
+              "nativeQueryRef": "Customer State",
+              "displayName": "Customer State"
             }
           ]
         },
         "Tooltips": {
           "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Mesures"
-                    }
-                  },
-                  "Property": "% Contribution Revenue"
-                }
-              },
-              "queryRef": "_Mesures.% Contribution Revenue",
-              "nativeQueryRef": "Revenue Contribution (%)",
-              "displayName": "Revenue Contribution (%)"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Mesures"
-                    }
-                  },
-                  "Property": "NB_SELLERS"
-                }
-              },
-              "queryRef": "_Mesures.NB_SELLERS",
-              "nativeQueryRef": "Number Of Sellers",
-              "displayName": "Number Of Sellers"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Mesures"
-                    }
-                  },
-                  "Property": "NB_ORDERS"
-                }
-              },
-              "queryRef": "_Mesures.NB_ORDERS",
-              "nativeQueryRef": "Number Of Orders",
-              "displayName": "Number Of Orders"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Mesures"
-                    }
-                  },
-                  "Property": "NB_QTY_SOLD"
-                }
-              },
-              "queryRef": "_Mesures.NB_QTY_SOLD",
-              "nativeQueryRef": "Quantity Sold",
-              "displayName": "Quantity Sold"
-            },
             {
               "field": {
                 "Measure": {
@@ -108,6 +48,21 @@
               "queryRef": "_Mesures.PREMIUM_ORDERS",
               "nativeQueryRef": "Number Of Premium Orders (>500R$)",
               "displayName": "Number Of Premium Orders (>500R$)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "AVG_PURCHASE"
+                }
+              },
+              "queryRef": "_Mesures.AVG_PURCHASE",
+              "nativeQueryRef": "Average Purchase Value",
+              "displayName": "Average Purchase Value"
             }
           ]
         },
@@ -121,11 +76,12 @@
                       "Entity": "_Mesures"
                     }
                   },
-                  "Property": "Revenue"
+                  "Property": "AVG_DELAY"
                 }
               },
-              "queryRef": "_Mesures.Revenue",
-              "nativeQueryRef": "Revenue"
+              "queryRef": "_Mesures.AVG_DELAY",
+              "nativeQueryRef": "Average Delivery Delay (Days)",
+              "displayName": "Average Delivery Delay (Days)"
             }
           ]
         }
@@ -224,7 +180,7 @@
             "borderThickness": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "0D"
                 }
               }
             },
@@ -251,6 +207,13 @@
                   }
                 }
               }
+            },
+            "defaultShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
@@ -258,24 +221,10 @@
       "zoom": [
         {
           "properties": {
-            "autoZoom": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
             "selectionZoom": {
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "manualZoom": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }
@@ -328,7 +277,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Revenue By Seller State'"
+                  "Value": "'Average Delivery Delay (In Days) By Customer State'"
                 }
               }
             }
@@ -341,7 +290,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "14D"
+                  "Value": "10D"
                 }
               }
             }

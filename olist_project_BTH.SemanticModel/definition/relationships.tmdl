@@ -28,6 +28,8 @@ relationship b97ffc01-343f-4377-0804-c2cd2c16c712
 	toColumn: dim_customer.customer_id
 
 relationship f9b1ebba-b51a-d3ec-e4a2-9a095e32f8c2
+	crossFilteringBehavior: bothDirections
+	securityFilteringBehavior: bothDirections
 	fromColumn: fact_order_items.order_id
 	toColumn: fact_orders.order_id
 
