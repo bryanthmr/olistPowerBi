@@ -4,10 +4,10 @@
   "position": {
     "x": 16,
     "y": 224,
-    "z": 2001,
+    "z": 3000,
     "height": 479.99999999999994,
     "width": 1248,
-    "tabOrder": 1001
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -467,107 +467,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "34929c6bd21a0d0e5b29",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_product"
-              }
-            },
-            "Property": "product_category_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "d59f63401b6d09bd3472",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Mesures"
-              }
-            },
-            "Property": "% Customer Satisfaction"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "909ed7c10051354588c0",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Mesures"
-              }
-            },
-            "Property": "NB_QTY_SOLD"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f2235b17108e402402de",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Mesures"
-              }
-            },
-            "Property": "NB_ORDERS"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "0aef741ce90a456d2db0",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Mesures"
-              }
-            },
-            "Property": "% Contribution Revenue"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "dd6ee0f20e815714401c",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Mesures"
-              }
-            },
-            "Property": "% Delay Respected"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "222dda8de243430109b7",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Mesures"
-              }
-            },
-            "Property": "PREMIUM_ORDERS"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

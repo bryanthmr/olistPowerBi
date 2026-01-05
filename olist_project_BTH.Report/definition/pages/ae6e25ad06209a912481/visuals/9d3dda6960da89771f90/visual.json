@@ -221,7 +221,7 @@
             "shadowBlur": {
               "expr": {
                 "Literal": {
-                  "Value": "72D"
+                  "Value": "40D"
                 }
               }
             }
@@ -411,6 +411,33 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualLink": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'PageNavigation'"
+                }
+              }
+            },
+            "navigationSection": {
+              "expr": {
+                "Literal": {
+                  "Value": "'ec9d5a0c841917de7d29'"
                 }
               }
             }

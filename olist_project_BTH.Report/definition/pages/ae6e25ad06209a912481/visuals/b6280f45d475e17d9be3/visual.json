@@ -3,7 +3,7 @@
   "name": "b6280f45d475e17d9be3",
   "position": {
     "x": 80,
-    "y": 208,
+    "y": 200,
     "z": 9000,
     "height": 100,
     "width": 500,
@@ -221,7 +221,7 @@
             "shadowBlur": {
               "expr": {
                 "Literal": {
-                  "Value": "72D"
+                  "Value": "40D"
                 }
               }
             }
@@ -424,6 +424,33 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualLink": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'PageNavigation'"
+                }
+              }
+            },
+            "navigationSection": {
+              "expr": {
+                "Literal": {
+                  "Value": "'a53554269da1ad456de4'"
                 }
               }
             }
