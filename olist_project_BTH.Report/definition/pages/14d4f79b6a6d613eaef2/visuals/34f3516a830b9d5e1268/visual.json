@@ -10,7 +10,7 @@
     "tabOrder": 2000
   },
   "visual": {
-    "visualType": "pieChart",
+    "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
         "Y": {
@@ -134,9 +134,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 3,
-                      "Percent": 0
+                    "Literal": {
+                      "Value": "'#074cdf'"
                     }
                   }
                 }
@@ -158,10 +157,10 @@
                 }
               }
             },
-            "labelStyle": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "'Data value, percent of total'"
+                  "Value": "true"
                 }
               }
             }

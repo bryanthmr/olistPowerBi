@@ -10,7 +10,7 @@
     "tabOrder": 4000
   },
   "visual": {
-    "visualType": "pieChart",
+    "visualType": "barChart",
     "query": {
       "queryState": {
         "Y": {
@@ -78,10 +78,10 @@
                 }
               }
             },
-            "labelStyle": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "'Data value, percent of total'"
+                  "Value": "true"
                 }
               }
             }
@@ -114,7 +114,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#12239E'"
+                      "Value": "'#074cdf'"
                     }
                   }
                 }
@@ -123,6 +123,19 @@
           },
           "selector": {
             "metadata": "_Mesures.SUM_PRICE"
+          }
+        }
+      ],
+      "totals": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
           }
         }
       ]

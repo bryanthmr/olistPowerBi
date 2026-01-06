@@ -4,7 +4,7 @@ table Dim_date
 
 	column Date
 		isKey
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: bd12afaa-f8b3-45ee-ac65-9b4df0bdebcb
 		summarizeBy: none
 		isNameInferred
@@ -33,6 +33,7 @@ table Dim_date
 		annotation SummarizationSetBy = User
 
 	column 'Mois Nom'
+		dataType: string
 		lineageTag: 589eea85-f2bf-457f-a8e7-c579137fcce6
 		summarizeBy: none
 		isNameInferred
@@ -101,7 +102,7 @@ table Dim_date
 				    CALENDARAUTO(),
 				    "Année", YEAR([Date]),
 				    "Mois No", MONTH([Date]),
-				    "Mois Nom", FORMAT([Date], "mmmm"),
+				    "Mois Nom", FORMAT([Date], "mmmm","en-US"),
 				    "Année-Mois", FORMAT([Date], "yyyy-MM"),
 				    "Trimestre", "Q" & FORMAT([Date], "q"),
 				    "Semaine", WEEKNUM([Date], 2)

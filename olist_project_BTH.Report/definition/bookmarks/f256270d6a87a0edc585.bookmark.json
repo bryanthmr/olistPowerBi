@@ -3,7 +3,17 @@
   "displayName": "DLMenuClosed",
   "name": "f256270d6a87a0edc585",
   "options": {
-    "targetVisualNames": []
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "fa16ac43138807d2ca05",
+      "18260fc33057e6b3dd60",
+      "51a8e410306368a26c28",
+      "98a7db4c7a299297d053",
+      "be04e1601872449b66ae",
+      "e6badef0b6e804e32b6c",
+      "edcfac01e10699776e81",
+      "ef7d3052cda0d0001934"
+    ]
   },
   "explorationState": {
     "version": "1.3",
@@ -137,6 +147,18 @@
           ]
         },
         "visualContainers": {
+          "094ed374ac3c7079e273": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "18260fc33057e6b3dd60": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
           "26dc1eff083db26ceeed": {
             "singleVisual": {
               "visualType": "textbox",
@@ -147,7 +169,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "c055def315676c5c9e9d",
+                  "name": "a307bcc405872d900c52",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -162,7 +184,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "09937ee07930c476d6c8",
+                  "name": "24c6f69c6573a25e26bc",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -177,7 +199,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "df4ae670e9de8d228a02",
+                  "name": "6959f26a2107d85d5430",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -217,7 +239,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "44f8dcdbb469a8aa16a2",
+                  "name": "f5aba8a4bb4cc6240500",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -232,7 +254,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "a2678aa9c02ccb248571",
+                  "name": "0eb9694051d62b8b50ad",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -288,9 +310,9 @@
               "objects": {}
             }
           },
-          "b26171de904d1c0b8b31": {
+          "51a8e410306368a26c28": {
             "singleVisual": {
-              "visualType": "shape",
+              "visualType": "actionButton",
               "objects": {}
             }
           },
@@ -298,7 +320,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "77c6a93337ece742bdbe",
+                  "name": "afa8c2e305968d453dd0",
                   "type": "Advanced",
                   "expression": {
                     "HierarchyLevel": {
@@ -318,7 +340,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "e2a9a96d630a000ddc74",
+                  "name": "af863cd6c4b85785bb2e",
                   "type": "Categorical",
                   "expression": {
                     "HierarchyLevel": {
@@ -338,7 +360,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "acab6be99a830245bce7",
+                  "name": "47e3169b2e99c47b95c6",
                   "type": "Categorical",
                   "expression": {
                     "HierarchyLevel": {
@@ -358,7 +380,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "1703ed05c9d8d958777b",
+                  "name": "d3bcf520b9067953039e",
                   "type": "Categorical",
                   "expression": {
                     "HierarchyLevel": {
@@ -378,7 +400,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "10d05d5993c4324a9b03",
+                  "name": "a686469f03b63be563b2",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -418,11 +440,23 @@
               }
             }
           },
+          "98a7db4c7a299297d053": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "b26171de904d1c0b8b31": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
           "b8f9939451154d8c5cec": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "0c3cf9beda786a128a24",
+                  "name": "b187d66655096cb53012",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -458,11 +492,17 @@
               ]
             }
           },
+          "be04e1601872449b66ae": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
           "d6c8b74cd4dd9037dc79": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "3f8207269c09d04c61a3",
+                  "name": "964ccdd03e003310e829",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -477,7 +517,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "50d896968e9bc3ba05d4",
+                  "name": "4bf9bb35546878543d0d",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -492,7 +532,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "c2586a55a9095c05257a",
+                  "name": "b4893d43525d878a11be",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -507,7 +547,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "6c2333e32ea90e6ea07c",
+                  "name": "9afc25a6eb00cac221d9",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -528,37 +568,13 @@
               "objects": {}
             }
           },
-          "094ed374ac3c7079e273": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
-          "98a7db4c7a299297d053": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
           "e6badef0b6e804e32b6c": {
             "singleVisual": {
               "visualType": "actionButton",
               "objects": {}
             }
           },
-          "18260fc33057e6b3dd60": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
-          "be04e1601872449b66ae": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
-          "51a8e410306368a26c28": {
+          "edcfac01e10699776e81": {
             "singleVisual": {
               "visualType": "actionButton",
               "objects": {}
@@ -567,12 +583,6 @@
           "ef7d3052cda0d0001934": {
             "singleVisual": {
               "visualType": "shape",
-              "objects": {}
-            }
-          },
-          "edcfac01e10699776e81": {
-            "singleVisual": {
-              "visualType": "actionButton",
               "objects": {}
             }
           }

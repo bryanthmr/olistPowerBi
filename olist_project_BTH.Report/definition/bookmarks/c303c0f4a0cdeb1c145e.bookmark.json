@@ -3,7 +3,17 @@
   "displayName": "DAMenuClosed",
   "name": "c303c0f4a0cdeb1c145e",
   "options": {
-    "targetVisualNames": []
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "88db35593467b4abca98",
+      "569511cb551478e0a0d8",
+      "aa08c4b1bd24347741b5",
+      "b4f2bec59087ee8c0207",
+      "ba90e2cf79450eac0cb2",
+      "e7e2aa5110156cb6b981",
+      "fa6018fc12b340c380e1",
+      "fecaab496b9b67a5005a"
+    ]
   },
   "explorationState": {
     "version": "1.3",
@@ -147,7 +157,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "751dba19adcae29a95bb",
+                  "name": "d011f46ee0dd0656cd44",
                   "type": "Categorical",
                   "expression": {
                     "HierarchyLevel": {
@@ -322,7 +332,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "16263d9e95200d287837",
+                  "name": "1877e64ad9e668a0cb61",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -373,11 +383,17 @@
               }
             }
           },
+          "569511cb551478e0a0d8": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
           "66d2cf743d9297b9a6b0": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "a6d32671dea3c6086c03",
+                  "name": "322333406ecb2999a122",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -392,7 +408,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "9462d014801197000c7c",
+                  "name": "cb0a1e516ad27d50d953",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -407,7 +423,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "b1f4107931500a6aa68e",
+                  "name": "52262a5c67c290c8d289",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -422,7 +438,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "936b457ec4de002d4a14",
+                  "name": "a246d2205c0140682a0d",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -437,7 +453,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "3f009a8f7a2000ba9987",
+                  "name": "67e1e806c81a8434907e",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -452,7 +468,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "1fcfed62e6e3862e94a6",
+                  "name": "6a5bef65c7017980e231",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -467,7 +483,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "d7f5cf22966ed2530907",
+                  "name": "0e6f70cf6e4840006321",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -482,7 +498,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "96fb09f278bb95ada826",
+                  "name": "3082a4e6c904329c8365",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -497,7 +513,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "1f3bc2836e3a60e9136d",
+                  "name": "754d1a75dde3772815dc",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -512,7 +528,7 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "4781f3e000843145c7d8",
+                  "name": "66c7c6ee7bcc89ae1ad9",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -562,11 +578,23 @@
               }
             }
           },
+          "9886e8bbd0250b056080": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
+          "aa08c4b1bd24347741b5": {
+            "singleVisual": {
+              "visualType": "actionButton",
+              "objects": {}
+            }
+          },
           "aeea4efda29190671d06": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "273d3740d898ed2dbb30",
+                  "name": "a5b309919ead66e60e6b",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -617,21 +645,9 @@
               }
             }
           },
-          "fb29ee801dbedbb38606": {
+          "b4f2bec59087ee8c0207": {
             "singleVisual": {
-              "visualType": "textbox",
-              "objects": {}
-            }
-          },
-          "fb4ec08f38252cc1e63e": {
-            "singleVisual": {
-              "visualType": "image",
-              "objects": {}
-            }
-          },
-          "9886e8bbd0250b056080": {
-            "singleVisual": {
-              "visualType": "actionButton",
+              "visualType": "shape",
               "objects": {}
             }
           },
@@ -647,31 +663,25 @@
               "objects": {}
             }
           },
-          "fecaab496b9b67a5005a": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
-          "569511cb551478e0a0d8": {
-            "singleVisual": {
-              "visualType": "actionButton",
-              "objects": {}
-            }
-          },
           "fa6018fc12b340c380e1": {
             "singleVisual": {
               "visualType": "actionButton",
               "objects": {}
             }
           },
-          "b4f2bec59087ee8c0207": {
+          "fb29ee801dbedbb38606": {
             "singleVisual": {
-              "visualType": "shape",
+              "visualType": "textbox",
               "objects": {}
             }
           },
-          "aa08c4b1bd24347741b5": {
+          "fb4ec08f38252cc1e63e": {
+            "singleVisual": {
+              "visualType": "image",
+              "objects": {}
+            }
+          },
+          "fecaab496b9b67a5005a": {
             "singleVisual": {
               "visualType": "actionButton",
               "objects": {}

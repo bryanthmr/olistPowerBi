@@ -193,6 +193,13 @@
                         "Value": "'#074CDF'"
                       }
                     }
+                  },
+                  "value": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "100000D"
+                      }
+                    }
                   }
                 },
                 "max": {
@@ -224,7 +231,7 @@
             "borderThickness": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "0D"
                 }
               }
             },

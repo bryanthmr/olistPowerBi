@@ -5,8 +5,8 @@
     "x": 336,
     "y": 16,
     "z": 3000,
-    "height": 80,
-    "width": 592,
+    "height": 79.999999999999986,
+    "width": 704,
     "tabOrder": 1000
   },
   "visual": {
@@ -32,10 +32,9 @@
               {
                 "textRuns": [
                   {
-                    "value": "Comprehensive analysis of Brazilian marketplace data (2016-2018)",
+                    "value": "Designed for executives & business stakeholders to support data-driven decisions.",
                     "textStyle": {
-                      "fontSize": "14pt",
-                      "color": "#000000"
+                      "fontSize": "14pt"
                     }
                   }
                 ],

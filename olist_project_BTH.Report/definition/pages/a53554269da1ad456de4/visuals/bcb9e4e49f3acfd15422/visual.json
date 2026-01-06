@@ -200,6 +200,13 @@
                         "Value": "'minColor'"
                       }
                     }
+                  },
+                  "value": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "9000D"
+                      }
+                    }
                   }
                 },
                 "mid": {
@@ -207,6 +214,13 @@
                     "expr": {
                       "Literal": {
                         "Value": "'#074CDF'"
+                      }
+                    }
+                  },
+                  "value": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "500000D"
                       }
                     }
                   }
@@ -240,7 +254,7 @@
             "borderThickness": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "0D"
                 }
               }
             },
