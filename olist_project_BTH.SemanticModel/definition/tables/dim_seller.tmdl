@@ -10,11 +10,13 @@ table dim_seller
 		annotation SummarizationSetBy = Automatic
 
 	column seller_zip_code
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 7bf919cb-bf9b-41d3-9099-9fe60d80cf18
+		dataCategory: PostalCode
 		summarizeBy: none
 		sourceColumn: seller_zip_code
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -29,8 +31,47 @@ table dim_seller
 	column seller_state
 		dataType: string
 		lineageTag: fb62589b-b403-4d88-bc99-2395e3db88f6
+		dataCategory: StateOrProvince
 		summarizeBy: none
 		sourceColumn: seller_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_seller_state =
+			SWITCH(
+			    'dim_seller'[seller_state],
+			    "SP", "Sao Paulo",
+			    "RJ", "Rio de Janeiro",
+			    "MG", "Minas Gerais",
+			    "RS", "Rio Grande do Sul",
+			    "PR", "Parana",
+			    "SC", "Santa Catarina",
+			    "BA", "Bahia",
+			    "DF", "Distrito Federal",
+			    "GO", "Goias",
+			    "ES", "Espirito Santo",
+			    "PE", "Pernambuco",
+			    "CE", "Ceara",
+			    "PA", "Para",
+			    "MT", "Mato Grosso",
+			    "MA", "Maranhao",
+			    "MS", "Mato Grosso do Sul",
+			    "PB", "Paraiba",
+			    "RN", "Rio Grande do Norte",
+			    "AM", "Amazonas",
+			    "AL", "Alagoas",
+			    "TO", "Tocantins",
+			    "SE", "Sergipe",
+			    "RO", "Rondonia",
+			    "PI", "Piaui",
+			    "AC", "Acre",
+			    "AP", "Amapa",
+			    "RR", "Roraima",
+			    dim_seller[seller_state]
+			)
+		lineageTag: ae163d40-92ff-4ebf-9cd7-9515a4680083
+		dataCategory: StateOrProvince
+		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
@@ -44,4 +85,6 @@ table dim_seller
 				    dim_seller_Table = gold_Schema{[Name="dim_seller",Kind="Table"]}[Data]
 				in
 				    dim_seller_Table
+
+	annotation PBI_ResultType = Table
 

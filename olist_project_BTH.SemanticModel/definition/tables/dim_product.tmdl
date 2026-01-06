@@ -91,3 +91,5 @@ table dim_product
 				in
 				    dim_product_Table
 
+	annotation PBI_ResultType = Table
+
